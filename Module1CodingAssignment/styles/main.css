@@ -1,0 +1,16 @@
+.message {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.message-wrong {
+    color: red;
+}
+.message-correct {
+    color: green;
+}
+#lunch-menu.wrong {
+    border-color: red;
+}
+#lunch-menu.correct {
+    border-color: green;
+}
