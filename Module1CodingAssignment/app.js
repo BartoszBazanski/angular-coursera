@@ -2,15 +2,13 @@
     'use strict'
     angular.module('lunchChecker', [])
         .controller('lunchController', function() {
-            let lunch = this;
+            var lunch = this;
             lunch.setMessage = function(message) {
                 lunch.message = message;
             }
-            lunch.check = function(){
-                if(!lunch.whatIAte){
-                    lunch.setMessage("Please enter data first");
-                    lunch.isCorrect = false;
-                    lunch.isWrong = true;
+            lunch.check = function() {
+                if(!lunch.whatIAte) {
+                    askToEnterData();
                     return;
                 };
                 var list = [];
@@ -19,13 +17,24 @@
                         list.push(food.trim());
                     }
                 });
-                if(list.length <= 3) {
+
+                if(!list.length) {
+                    askToEnterData();
+                    return;
+                }
+
+                if(list.length <= 3 && list.length > 0) {
                     lunch.setMessage("Enjoy!");
                 } else {
                     lunch.setMessage("Too much!");
                 }
-                lunch.isCorrect = true;
-                lunch.isWrong = false;
+                lunch.messageColor = 'message-correct';
+                lunch.inputBorderColor = 'correct';
+            }
+            var askToEnterData = function() {
+                lunch.setMessage("Please enter data first");
+                lunch.messageColor = 'message-wrong';
+                lunch.inputBorderColor = 'wrong';
             }
         })
 })();

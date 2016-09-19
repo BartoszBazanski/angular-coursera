@@ -14,13 +14,13 @@
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="lunch.whatIAte" ng-class="{wrong: lunch.isWrong, correct: lunch.isCorrect}">
+             class="form-control {{lunch.inputBorderColor}}" ng-model="lunch.whatIAte">
          </div>
          <div class="form-group">
              <!-- I checked if there are empty items between commas -->
              <button class="btn btn-default" ng-click="lunch.check()">Check If Too Much</button>
          </div>
-         <div class="form-group message" ng-class="{'message-wrong': lunch.isWrong, 'message-correct': lunch.isCorrect}">
+         <div class="form-group message {{lunch.messageColor}}">
            {{lunch.message}}<!-- Your message can go here. -->
          </div>
    </div>
