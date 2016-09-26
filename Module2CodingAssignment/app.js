@@ -26,7 +26,8 @@
       {name: "Cookies", quantity: 10},
       {name: "Milk", quantity: 2},
       {name: "Bread", quantity: 1},
-      {name: "Coffie", quantity: 3}
+      {name: "Coffie", quantity: 3},
+      {name: "Cheese", quantity: 4}
     ];
     var toBuyList = [];
     var boughtItemList = [];
