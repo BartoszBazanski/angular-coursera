@@ -27,7 +27,8 @@
       {name: "Milk", quantity: 2},
       {name: "Bread", quantity: 1},
       {name: "Coffie", quantity: 3},
-      {name: "Cheese", quantity: 4}
+      {name: "Cheese", quantity: 4},
+      {name: "Ham", quantity: '300g'}
     ];
     var boughtItemList = [];
 
