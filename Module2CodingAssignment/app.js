@@ -38,11 +38,8 @@
     };
     service.buyItem = function(index) {
       var boughtItem = toBuyList[index];
-      console.log(boughtItem);
-      console.log(boughtItemList);
       toBuyList.splice(index, 1);
       boughtItemList.push(boughtItem);
-      console.log(boughtItemList);
     };
     service.getBoughtItems = function() {
       return boughtItemList;
