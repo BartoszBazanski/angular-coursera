@@ -29,17 +29,14 @@
       {name: "Coffie", quantity: 3},
       {name: "Cheese", quantity: 4}
     ];
-    var toBuyList = [];
     var boughtItemList = [];
-    angular.forEach(shoppingList, function(item) {
-      toBuyList.push(item);
-    })
+
     service.getItemsToBuy = function() {
-      return toBuyList;
+      return shoppingList;
     };
     service.buyItem = function(index) {
-      var boughtItem = toBuyList[index];
-      toBuyList.splice(index, 1);
+      var boughtItem = shoppingList[index];
+      shoppingList.splice(index, 1);
       boughtItemList.push(boughtItem);
     };
     service.getBoughtItems = function() {
