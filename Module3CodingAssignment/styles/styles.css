@@ -9,6 +9,17 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
+.search-container {
+    clear: both;
+}
+.items button {
+    float: right;
+    clear: both;
+    margin-left: 10px;
+}
+.items {
+    padding: 10px 5px;
+}
 .loader {
   display: none;
   margin-left: 5px;
