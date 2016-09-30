@@ -18,12 +18,13 @@
         <div class="form-group narrow-button">
           <button class="btn btn-primary clearfix" ng-click="narrow.itDown()">Narrow It Down For Me!</button>
         </div>
+        <p class="item-counter pull-left">Items found: {{narrow.found.length}}</p>
     </div>
 
     <!-- Bonus loader (see Bonus section of the assignment) -->
     <items-loader-indicator></items-loader-indicator>
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="narrow.found" on-remove="...." class="pull-left"></found-items>
+    <found-items found-items="narrow.found" on-remove="narrow.removeItem(index)" class="pull-left"></found-items>
   </div>
 
 </body>

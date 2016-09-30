@@ -16,6 +16,10 @@ input[type="text"] {
     float: right;
     clear: both;
     margin-left: 10px;
+    margin-top: -3px;
+}
+.item-counter {
+    clear: both;
 }
 .items {
     padding: 10px 5px;
