@@ -25,7 +25,6 @@ input[type="text"] {
     padding: 10px 5px;
 }
 .loader {
-  display: none;
   margin-left: 5px;
   font-size: 10px;
   float: left;

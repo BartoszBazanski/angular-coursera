@@ -2,14 +2,18 @@
     angular.module('NarrowItDownApp', [])
         .controller('NarrowItDownController', NarrowItDownController)
         .service('MenuSearchService', MenuSearchService)
-        .directive('foundItems', FoundItemsDctv);
+        .directive('foundItems', FoundItemsDctv)
+        .directive('itemsLoaderIndicator', LoaderDctv);
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var narrow = this;
+        narrow.loading = false;
         var promise = MenuSearchService.getMatchedMenuItems;
         narrow.itDown = function() {
+            narrow.loading = true;
             promise(narrow.search).then(function(foundItems) {
                 narrow.found = foundItems;
+                narrow.loading = false;
             })
             .catch(function(error) {
                 console.log("Something went terribly wrong.");
@@ -51,6 +55,13 @@
             },
             controllerAs: 'list',
             bindToController: true
+        }
+        return ddo;
+    }
+    function LoaderDctv() {
+        var ddo = {
+            restrict: 'E',
+            templateUrl: './loader/itemsloaderindicator.template.html'
         }
         return ddo;
     }
