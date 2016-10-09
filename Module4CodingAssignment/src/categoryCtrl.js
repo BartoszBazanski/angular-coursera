@@ -8,7 +8,7 @@
     function CategoryCtrl(category) {
         var ctrl = this;
         console.log(category);
-        ctrl.name = category.name;
-        ctrl.short = category.short_name;
+        ctrl.name = category.category.name;
+        ctrl.items = category.menu_items;
     };
 })();

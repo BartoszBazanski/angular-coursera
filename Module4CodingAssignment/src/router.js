@@ -17,8 +17,8 @@
                 templateUrl: './partials/categories-tmpl.html',
                 controller: 'MenuCtrl as ctrl',
                 resolve: {
-                    items: ['MenuService', function(MenuService) {
-                        return MenuService.fetchMenu();
+                    items: ['MenuDataService', function(MenuDataService) {
+                        return MenuDataService.getAllCategories();
                     }]
                 }
             })
@@ -27,13 +27,8 @@
                 templateUrl: './partials/categories-items-tmpl.html',
                 controller: 'CategoryCtrl as category',
                 resolve: {
-                    category: ['$stateParams', 'MenuService', function($stateParams, MenuService) {
-                        return MenuService.fetchMenu().then(function(result) {
-                            var menuCategory = result[$stateParams.categoryId];
-                            return MenuService.fetchCategory(menuCategory.url).then(function(result) {
-                                return result;
-                            })
-                        })
+                    category: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+                        return MenuDataService.getItemsForCategory($stateParams.categoryId);
                 }]}
             });
     };
