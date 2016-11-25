@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <form novalidate id="sign-up-form" name="signUpForm">
+                <div class="form-group row">
+                    <label class="col-xs-3 col-form-label">First name</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="firstName" ng-model="signUpCtrl.firstName" required="">
+                        <div ng-show="!signUpForm.firstName.$valid" class="error"><small>This is required</small></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-xs-3 col-form-label">Last name</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="lastName" ng-model="signUpCtrl.lastName" required="">
+                        <div ng-show="!signUpForm.lastName.$valid" class="error"><small>This is required</small></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-xs-3 col-form-label">Email address</label>
+                    <div class="col-xs-9">
+                        <input type="email" class="form-control" name="email" ng-model="signUpCtrl.email" required="">
+                        <div ng-show="!signUpForm.email.$valid" class="error"><small>This is required</small></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-xs-3 col-form-label">Phone number</label>
+                    <div class="col-xs-9">
+                        <input type="number" ng-minlength="1" ng-maxlength="3" class="form-control" name="phone" ng-model="signUpCtrl.phone" required="">
+                        <div ng-show="!signUpForm.phone.$valid" class="error"><small>Phone number should be 10 digit long and unhyphonated</small></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-xs-3 col-form-label">Favorite dish</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" name="favouriteDish" ng-model="signUpCtrl.favoriteDish" required="">
+                        <div ng-show="!signUpForm.favouriteDish.$valid" class="error"><small>Please specify the menu number</small></div>
+                    </div>
+                </div>
+                <button type="submit" class="col-xs-12 btn btn-info btn-lg" ng-click="signUpCtrl.submit()" ng-disabled="!signUpForm.$valid">Submit</button>
+            </form>
+        </div>
+        <div class="col-xs-3">
+            <div ng-show="signUpForm.$valid && signUpForm.$submitted" class="alert alert-success">
+                Your information has been saved.
+            </div>
+            <!-- <pre>
+                {{ signUpCtrl | json }}
+            </pre>
+            <pre>
+                {{ signUpForm | json }}
+            </pre> -->
+        </div>
+    </div>
+</div>
