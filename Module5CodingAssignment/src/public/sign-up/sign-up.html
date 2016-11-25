@@ -6,35 +6,35 @@
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">First name</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" name="firstName" ng-model="signUpCtrl.firstName" required="">
+                        <input type="text" class="form-control" name="firstName" ng-model="signUpCtrl.user.firstName" required="">
                         <div ng-show="!signUpForm.firstName.$valid" class="error"><small>This is required</small></div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">Last name</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" name="lastName" ng-model="signUpCtrl.lastName" required="">
+                        <input type="text" class="form-control" name="lastName" ng-model="signUpCtrl.user.lastName" required="">
                         <div ng-show="!signUpForm.lastName.$valid" class="error"><small>This is required</small></div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">Email address</label>
                     <div class="col-xs-9">
-                        <input type="email" class="form-control" name="email" ng-model="signUpCtrl.email" required="">
+                        <input type="email" class="form-control" name="email" ng-model="signUpCtrl.user.email" required="">
                         <div ng-show="!signUpForm.email.$valid" class="error"><small>This is required</small></div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">Phone number</label>
                     <div class="col-xs-9">
-                        <input type="number" ng-minlength="1" ng-maxlength="3" class="form-control" name="phone" ng-model="signUpCtrl.phone" required="">
+                        <input type="number" ng-minlength="1" ng-maxlength="3" class="form-control" name="phone" ng-model="signUpCtrl.user.phone" required="">
                         <div ng-show="!signUpForm.phone.$valid" class="error"><small>Phone number should be 10 digit long and unhyphonated</small></div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">Favorite dish</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" name="favouriteDish" ng-model="signUpCtrl.favoriteDish" required="">
+                        <input type="text" class="form-control" name="favouriteDish" ng-model="signUpCtrl.user.favoriteDish" required="">
                         <div ng-show="!signUpForm.favouriteDish.$valid" class="error"><small>Please specify the menu number</small></div>
                     </div>
                 </div>

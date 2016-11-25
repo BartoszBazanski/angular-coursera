@@ -4,10 +4,17 @@
     angular.module('public')
         .controller('SignUpController', SignUpController);
 
-    function SignUpController() {
+    SignUpController.$inject = ['RegistrationService']
+
+    function SignUpController(RegistrationService) {
         var ctrl = this;
         ctrl.submit = function() {
-            console.log("Your information were successfully changed!");
+            RegistrationService.save(ctrl.user);
+            ctrl.fetch();
+        }
+
+        ctrl.fetch = function() {
+            console.log(RegistrationService.getUserInfo());
         }
     }
 
