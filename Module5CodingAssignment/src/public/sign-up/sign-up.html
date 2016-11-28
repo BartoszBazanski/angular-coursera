@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col-xs-3"></div>
-        <div class="col-xs-6">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
             <form novalidate id="sign-up-form" name="signUpForm">
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">First name</label>
@@ -34,14 +35,18 @@
                 <div class="form-group row">
                     <label class="col-xs-3 col-form-label">Favorite dish</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" name="favouriteDish" ng-model="signUpCtrl.user.favoriteDish" required="">
+                        <input type="text" class="form-control" name="favouriteDish" ng-model="signUpCtrl.searchedDish" ng-change="signUpCtrl.search(signUpCtrl.searchedDish)" required="">
                         <div ng-show="!signUpForm.favouriteDish.$valid" class="error"><small>Please specify the menu number</small></div>
+                        <div><small>{{ signUpCtrl.searchMessage ? signUpCtrl.searchMessage : '' }}</small></div>
                     </div>
                 </div>
-                <button type="submit" class="col-xs-12 btn btn-info btn-lg" ng-click="signUpCtrl.submit()" ng-disabled="!signUpForm.$valid">Submit</button>
+                <div class="col-xs-12" ng-if="signUpCtrl.user.favoriteDish">
+                    <menu-item menu-item="signUpCtrl.user.favoriteDish"><menu-item>
+                </div>
+                <button type="submit" class="col-xs-12 btn btn-info btn-lg" ng-click="signUpCtrl.submit()" ng-disabled="!signUpForm.$valid || !signUpCtrl.searchQueryValid">Submit</button>
             </form>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-2">
             <div ng-show="signUpForm.$valid && signUpForm.$submitted" class="alert alert-success">
                 Your information has been saved.
             </div>

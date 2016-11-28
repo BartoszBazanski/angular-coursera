@@ -5,10 +5,11 @@
   <div class="text-center">
     {{ menuItemsCtrl.menuItems.category.special_instructions}}
   </div>
-
-  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items"
-             menu-item="menuItem">
-  </menu-item>
+  <div class="row">
+      <div class="col-xs-6" ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items">
+          <menu-item menu-item="menuItem"></menu-item>
+      </div>
+  </div>
 
 
 </div>

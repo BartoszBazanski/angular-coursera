@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6" ng-if="myInfoCtrl.user">
+            <address class="p-vh-55-10">
+                <h3>Your Info</h3>
+                <div class="user-info"><strong>First name: </strong><span>{{ myInfoCtrl.user.firstName }}</span></div>
+                <div class="user-info"><strong>Last name: </strong><span>{{ myInfoCtrl.user.lastName }}</span></div>
+                <div class="user-info"><strong>Email address: </strong><span>{{ myInfoCtrl.user.email }}</span></div>
+                <div class="user-info"><strong>Phone number: </strong><span>{{ myInfoCtrl.user.phone }}</span></div>
+                <div class="user-info"><strong>Favourite dish:</strong>
+                    <menu-item menu-item='myInfoCtrl.user.favoriteDish'></menu-item>
+                </div>
+            </address>
+        </div>
+        <div class="col-xs-6" ng-if="!myInfoCtrl.user">
+            <div class="p-vh-55-10 alert text-center">
+                <h3>Not Signed Up Yet! - <a ui-sref="public.signUp">Sign up Now!</a></h3>
+            </div>
+        </div>
+        <div class="col-xs-3"></div>
+    </div>
+</div>
