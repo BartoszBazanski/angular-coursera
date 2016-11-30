@@ -10,6 +10,5 @@
     function MyInfoController(RegistrationService) {
         var ctrl = this;
         ctrl.user = RegistrationService.getUserInfo();
-        
     }
 })();
