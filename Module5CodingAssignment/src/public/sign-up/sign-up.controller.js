@@ -9,13 +9,16 @@
     function SignUpController(RegistrationService) {
         var ctrl = this;
         ctrl.searchQueryValid = false;
-        ctrl.user = {};
+        ctrl.user = RegistrationService.getUserInfo();
+        ctrl.searchedDish = ctrl.user ? ctrl.user.favoriteDish.short_name : null;
+
         ctrl.submit = function() {
             RegistrationService.save(ctrl.user);
         }
 
         ctrl.search = function(dish) {
             ctrl.searchMessage = "";
+            ctrl.user = ctrl.user ? ctrl.user : {};
             RegistrationService.getSelectedDish(dish).then(function(response) {
                 ctrl.user.favoriteDish = response;
                 ctrl.searchMessage = ctrl.user.favoriteDish.name;

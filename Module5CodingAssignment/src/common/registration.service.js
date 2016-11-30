@@ -14,7 +14,7 @@
         }
 
         service.getUserInfo = function() {
-            return service.user;
+            return service.user ? service.user : angular.noop();
         }
 
         service.getSelectedDish = function(shortName) {
